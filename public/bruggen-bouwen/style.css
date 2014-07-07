@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #F4F4ED;
+  padding: 30px;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+  color: #3E3E3C;
+}
+
+#wrapper {
+  font-size: 1.4em;
+}
+
+#canvas-wrap {
+  position: relative;
+  background: #FFF;
+  border: 10px solid #DDD;
+}
+
+#canvas, #overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cell {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 60px;
+  color: #FFF;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.h-brug, .v-brug {
+  background: transparent url(bruggen.png) no-repeat;
+}
+
+.h-brug {
+  background-position: 0 0;
+}
+.v-brug {
+  background-position: -60px 0;
+}
+
+.h-brug.dubbel {
+  background-position: 0 -60px;
+}
+.v-brug.dubbel {
+  background-position: -60px -60px;
+}
+
+.rechts-brug .r, .links-brug .l  {
+  display: block;
+  background-position: 0 0;
+}
+
+.onder-brug .o, .boven-brug .b {
+  display: block;
+  background-position: -60px 0;
+}
+
+.rechts-brug.rechts-dubbel .r, .links-brug.links-dubbel .l  {
+  display: block;
+  background-position: 0 -60px;
+}
+
+.onder-brug.onder-dubbel .o, .boven-brug.boven-dubbel .b {
+  display: block;
+  background-position: -60px -60px;
+}
+
+.b, .r, .o, .l {
+  position: absolute;
+  display: none;
+  background: url(bruggen.png) no-repeat;
+  z-index: 1;
+}
+
+.b {
+  width: 60px;
+  height: 20px;
+  left: 0;
+  top: 0;
+}
+
+.o {
+  width: 60px;
+  height: 20px;
+  left: 0;
+  top: 40px;
+}
+
+.l {
+  width: 20px;
+  height: 60px;
+  left: 0;
+  top: 0;
+}
+.r {
+  width: 20px;
+  height: 60px;
+  left: 40px;
+  top: 0;
+}
+
+.city {
+  position: absolute;
+  z-index:20;
+  background: #556270;
+  line-height: 40px;
+  border-radius: 40px;
+  margin: 10px;
+  text-align: center;
+  display: block;
+  width: 40px;
+  color: #FFF;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.selected {
+  background-color: #D95B43;
+}
+
+.mogelijk {
+  background-color: #FF6B6B;
+}
+
+.vol {
+  background-color: #C44D58;
+}
+
+footer {
+  padding: 2em 1em;
+  margin: 2em 0;
+  border-bottom: 1px solid #E0E0D5;
+  border-top: 1px solid #E0E0D5;
+}
+
+h1 {
+  color: #111;
+  font-family: Georgia, serif;
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0px 40% 8px 0px;
+}
+
+form p {
+	margin-bottom: .5em;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.e1 {
+  background-color: #FF441F;
+}
+
+.e2 {
+  background-color: orange;
+}
+
+.e3 {
+  background-color: #316AC5;
+}
+
+input[type=text], textarea, #submit {
+  padding: 3px;
+}
+
+input[type=text], textarea {
+  width: 60%;
+}
+
+textarea {
+	font-family: Consolas, monospace;
+	font-size: 13px;
+}
+
+label {
+  cursor: pointer;
+	width: 10em;
+	display: block;
+	float: left;
+	margin-right: .5em;
+}
+
+p.linksruimte {
+	padding-left: 1em;
+}
+
+/* new clearfix */
+.cf:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .cf             { zoom: 1; } /* IE6 */
+*:first-child+html .cf { zoom: 1; } /* IE7 */

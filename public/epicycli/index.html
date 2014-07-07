@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Epicycli</title>
+	<script type="text/javascript" src="epicycli.js"> </script>
+	<style type="text/css">
+		canvas {
+			border: 1px dotted #CCC;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.clearfix:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+			}
+		* html .clearfix             { zoom: 1; } /* IE6 */
+		*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+		
+		#links {
+			position: relative;
+			float: left;
+			width: 610px;
+			height: 600px;
+		}
+		
+		#rechts {
+			float: left;
+			min-width: 250px;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>Epicycli</h1>
+	<form id="form" action="#" class="clearfix">
+		<div id="links">
+			<canvas id="canvas2" width="600" height="600"></canvas>
+			<canvas id="canvas" width="600" height="600"></canvas>
+		</div>
+		<div id="rechts">
+			<p>Klik op de tekening om het tekenen te pauzeren</p>
+			<p><label for="laatC1Zien">Laat tekencirkels zien: </label><input type="checkbox" name="laatC1Zien" id="laatC1Zien" checked="checked"/></p>
+			<p><label for="laatC2Zien">Laat tekening zien: </label><input type="checkbox" name="laatC2Zien" id="laatC2Zien" checked="checked"/></p>
+			<p><label for="cirkels"></label><textarea name="cirkels" id="cirkels" cols="60" rows="20"></textarea></p>
+			<p><input type="submit" value="Verander de cirkels" /></p>
+		</div>
+	</form>
+</body>
+</html>

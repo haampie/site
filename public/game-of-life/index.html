@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Conway's Game of Life</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			init();
+		});
+	</script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id="center" class="clearfix">
+		<div class="clearfix">
+			<div id="rechts">
+				<header>
+					<h1>Conway's Game of Life</h1>
+					<h2>In Javascript</h2>
+				</header>
+				<section>
+					<p>:G :G.</p>
+					<table><tbody id="conwaysgameoflife"></tbody></table>
+					<form action="#" id="form">
+						<p>
+							<input type="text" name="snelheid" id="snelheid" placeholder="Snelheid (30)"/>
+							<input type="text" name="levensniveaus" id="levensniveaus" placeholder="Levensniveaus (1)" />
+						</p>
+					</form>
+					<div class="clearfix">
+						<div class="oranje">
+							<h3># Generaties</h3>
+							<span class="info" id="generaties">0</span>
+						</div>
+						<a href="#" id="startbutton" class="oranje">
+							<span class="header">Knopje</span>
+							<span class="info">Start</span>
+						</a>
+						<a href="#" id="clearbutton" class="oranje">
+							<span class="header">Knopje</span>
+							<span class="info">Maak Leeg</span>
+						</a>
+					</div>
+				</section>
+			</div>
+		</div>
+		<footer class="clearfix">
+			<p>Harmen Stoppels</p>
+		</footer>
+	</div>
+</body>
+</html>

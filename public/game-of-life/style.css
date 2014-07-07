@@ -1,0 +1,241 @@
+/* Font */
+@font-face{
+	font-family: 'Essays 1743';
+	src: url('essays1743-min.eot');
+	src: local('Essays 1743'), url('essays1743-min.ttf');
+}
+
+@font-face{
+	font-family: 'Linux Libertine';
+	src: url('lin-libertine-min.eot');
+	src: local('Linux Libertine'), url('lin-libertine-min.ttf');
+}
+
+/* Reset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted #000;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* Style */
+
+html, body {
+	height: 100%;
+}
+
+body{
+	font: large/1.556 'Linux Libertine',Palatino,'Palatino Linotype','Book Antiqua',Georgia,'Times New Roman',serif;
+	word-spacing: .1em;
+	background: snow url(bg-400-paper.jpg) repeat 0 0 scroll;
+	padding-top: 2em;
+	line-height: 1.8;
+}
+
+h1, h2, h3 {
+	font-family: 'Essays 1743', 'Linux Libertine', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, 'Times New Roman', serif;
+
+}
+
+h1 {
+	font-size: 4em;
+	text-shadow: 1px 0 1px #FFF;
+	line-height: 1.2;
+}
+
+#center {
+	width: 70%;
+	min-width: 900px;
+	margin: 0 auto;
+	position: relative;
+	min-height: 100%;
+	height:auto !important; /* voor moderne browsers */
+	height:100%; /* voor IE */
+}
+
+#rechts {
+	width: 80%;
+	float: right;
+}
+
+section {
+	border-top: 1px solid #999;
+	padding-top: 1em;
+	margin-top: 1em;
+}
+
+tr {
+	height: 10px;
+	line-height: 10px;
+}
+
+td {
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	display: block;
+	float: left;
+}
+
+td.dead {
+	background: #000;
+}
+
+td.alive {
+	background: #FFF;
+}
+
+a:link, a:visited, a:hover, a:active {
+	border: 0px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:focus {
+	text-decoration: underline;
+	outline: 0;
+}
+
+a.active {
+	background: url(geldachtergrondactief.png) no-repeat 0 0 scroll;
+}
+
+.oranje {
+	display: block;
+	float: left;
+	background: transparent url(geldachtergrond.png) no-repeat 0 0 scroll;
+	width: 203px;
+	height: 95px;
+	color: #FFF;
+	text-align: center;
+	padding-top: 1em;
+	text-shadow: 1px 0 1px #000;
+	line-height: 1;
+	margin: 1em 1em 0 0;
+}
+
+.oranje h3, .oranje span.header {
+	line-height: 1;
+}
+
+.oranje span.info {
+	font-family: 'Essays 1743', 'Linux Libertine', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, 'Times New Roman', serif;
+	font-size: 2em;
+	display: block;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+footer {
+	position: relative;
+	bottom: 0;
+	border-top: 1px solid #999;
+	padding: 1em 0;
+	margin-top: 1em;
+	width: 100%;
+	float:right;
+}
+
+footer p {
+	padding: 1.2em 0;
+	width: 80%;
+	float: right;
+}
+
+#copy {
+	font-size: 1.2em;
+}

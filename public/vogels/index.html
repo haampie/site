@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<title>Vogels</title>
+  <style>
+    #canvas {
+      border: 1px dashed #CCC;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulatie van een school vissen/vogels</h1>
+  <ul>
+  	<li>Klik in het scherm om de groep ergens heen te sturen</li>
+  	<li>Druk op spatie om alles te pauzeren</li>
+    <li>Hoe dit werkt:
+      <ul>
+        <li>Elk voorwerp wordt naar de gemiddelde positie van de groep getrokken</li>
+        <li>Elk voorwerp neemt uiteindelijk de gemiddelde snelheid van de groep aan</li>
+        <li>Elk voorwerp houdt een bepaalde afstand tot de ander</li>
+        <li>Elk voorwerp heeft een maximale snelheid</li>
+        <li>10 van de 50 voorwerpen wordt door aangetrokken door een punt op het scherm</li>
+      </ul>
+    </li>
+  </ul>
+	<canvas id="canvas" width="800" height="600"></canvas>
+  <script src="math.js"></script>
+  <script src="vector.js"></script>
+  <script src="programma.js"></script>
+</body>
+</html>

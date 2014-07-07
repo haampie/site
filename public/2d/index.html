@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D game</title>
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<!--[if IE]><script type="text/javascript" src="../excanvas.compiled.js"></script><![endif]-->
+	<script type="text/javascript" src="2d.js"> </script>
+</head>
+<body>
+	<div id="center">
+		<h1 class="sectie">2D game &mdash; <a href="2d.js" title="View source code">source code</a></h1>
+		<div id="resultaat">
+			<h2>Loading: <span id="status">0</span>% complete</h2>
+			<p>Use the arrow keys or WASD to move, space bar to shoot and the left mouse button to change the tile's texture. The map is <strong>scrollable</strong></p>
+		</div>
+		<p>Number of visible bullets: <span id="kogels">0</span>. FPS: <span id="fps">0</span>
+		<canvas id="canvas" width="800" height="600"></canvas>
+		<div id="textuur-selector" class="clearfix"></div>
+	</div>
+</body>
+</html>
