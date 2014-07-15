@@ -43,28 +43,6 @@
 				<p>Visualisatie van gelineariseerde ondiep-watervergelijkingen. <a href="/stroming/eindig" title="Gelineariseerde, staande golf">Staande golf</a> geeft lineare beweging, terwijl het <a href="/stroming/" title="Gelineariseerde onbegrensde ondiep-watervergelijkingen">onbegrensde geval</a> resulteert in cirkelbewegingen van deeltjes.</p>
 			</section>
 		</article>
-{{-- 		<article class="post">
-			<header class="post-header">
-				<span class="post-meta"><time datetime="2014-05-28">28 May 2014</time> </span>
-				<h2 class="post-title"><a href="/the-silence/">The Silence...</a></h2>
-
-			</header>
-			<section class="post-excerpt">
-				<p>I thought I'd write a quick update here. I have been extremely busy with a few projects of mine and henceforth had no time to write new articles for this blog. Currently I'm working on:      My 9-5 job (of course)   Authoring my book for Manning Publishing on AngularJS   Running workshops&hellip;</p>
-			</section>
-		</article>
-
-		<article class="post">
-			<header class="post-header">
-				<span class="post-meta"><time datetime="2014-05-05">05 May 2014</time> </span>
-				<h2 class="post-title"><a href="/x-discover-geo-location-based-custom-polymer-element/">&lt;x-discover&gt; - Geo Location based custom Polymer element</a></h2>
-
-			</header>
-			<section class="post-excerpt">
-				<p>After creating the &lt;x-flickr&gt; Polymer element here's my latest creation - strictly work in progress - but I'd like to share the details of it because I find it exciting. It is an extension of Eric Bidelman's geo-location with quite a lot of extra added features. So what&hellip;</p>
-			</section>
-		</article>
---}}
 	</main>
 
 	<footer class="site-footer">
