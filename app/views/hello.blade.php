@@ -40,7 +40,7 @@
 				<h2 class="post-title"><a href="/epicycli/">Golven</a></h2>
 			</header>
 			<section class="post-excerpt">
-				<p>Visualisatie van gelineariseerde ondiep-watervergelijkingen. <a href="/stroming/eindig" title="Gelineariseerde, staande golf">Staande golf</a> geeft lineare beweging, terwijl het <a href="/stroming/" title="Gelineariseerde onbegrensde ondiep-watervergelijkingen">onbegrensde geval</a> resulteert in cirkelbewegingen van deeltjes.</p>
+				<p>Visualisatie van gelineariseerde ondiep-watervergelijkingen. <a href="/stroming/eindig.html" title="Gelineariseerde, staande golf">Staande golf</a> geeft lineare beweging, terwijl het <a href="/stroming/" title="Gelineariseerde onbegrensde ondiep-watervergelijkingen">onbegrensde geval</a> resulteert in cirkelbewegingen van deeltjes.</p>
 			</section>
 		</article>
 	</main>
