@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Non-stationary, linearised shallow water equations.</title>
+
+  <script type="text/javascript" charset="utf-8" src="js/domready.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/MathBox-bundle.js"></script>
+
+  <script type="text/javascript">
+    DomReady.ready(function () {
+      if (location.href.match(/^file:/)) {
+        document.getElementById('info').style.opacity = 1;
+        document.getElementById('info').innerHTML = "Sorry. This example does not work when accessed using file://. Please use an http:// host and try again.";
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+  /**
+   * Bootstrap
+   */
+
+  // init points
+  xCoords = [];
+  zCoords = [];
+  vectorCoords = [];
+  step = 8;
+  maxX = 512;
+  maxZ = 128;
+
+  for(x0=0; x0<=maxX; x0+=step){
+    xCoords.push(x0);
+  }
+
+  for(z0=0; z0<=maxZ; z0+=step){
+    zCoords.push(z0);
+  }
+
+  for(i=0; i < xCoords.length; i++){
+    for(j=0; j < zCoords.length; j++){
+      vectorCoords.push([xCoords[i], 0, zCoords[j]]);
+      vectorCoords.push([xCoords[i], 4, zCoords[j]]);
+    }
+  }
+
+
+  DomReady.ready(function() {
+    ThreeBox.preload([
+      'snippets.glsl.html',
+    ], function () {
+
+      // MathBox boilerplate
+      var mathbox = window.mathbox = mathBox({
+        cameraControls: true,
+        cursor:         true,
+        controlClass:   ThreeBox.OrbitControls,
+        elementResize:  true,
+        fullscreen:     true,
+        screenshot:     true,
+        stats:          false,
+        scale:          1,
+      }).start();
+
+      // Viewport camera/setup
+      mathbox
+        .viewport({
+          type: 'cartesian',
+          range: [[0, maxX], [-5, 5], [0, maxZ]],
+          scale: [1, 1, maxZ/maxX],
+          rotation: [0,Math.PI/2,0],
+          polar: 0,
+        })
+        .camera({
+          orbit: 2,
+          phi: Math.PI/4,
+          theta: Math.PI/2,
+        })
+        .transition(300)
+        .vector({
+          id: 'vec',
+          n: xCoords.length*zCoords.length,
+          data: vectorCoords,
+          expression: function(i, end) {
+            return 0;
+          },
+          line: false,
+          pointSize: 3,
+          size: 0.015,
+          lineWidth: .5
+        })
+        .curve({
+          id: 'water-level',
+          n: xCoords.length,
+          color: 0xFF0000,
+          data: null,
+          expression: function (x, i) {
+            return 0;
+          },
+          line: true,
+          points: false
+        });
+
+
+      var k=Math.PI/179, A=14;
+      var omega = Math.sqrt(9.81*k);
+      var h=256;
+
+
+      mathbox.world().loop().hookPreRender(function () {
+        var t = +new Date()*0.002;
+        var newCoords = [];
+        var zMultiply = [];
+        var xMultiplySin = [];
+        var xMultiplyCos = [];
+        var curveCoords = [];
+        var time = +new Date() * 0.002;
+
+        for(i=0; i < xCoords.length; i++){
+          xMultiplySin.push(Math.sin(k*xCoords[i]-omega*time));
+          xMultiplyCos.push(Math.cos(k*xCoords[i]-omega*time));
+        }
+
+        for(j=0; j < zCoords.length; j++){
+          zMultiply.push(A*k*Math.exp(k*(h-zCoords[j])));
+        }
+
+        for(i=0; i < xCoords.length; i++){
+          for(j=0; j < zCoords.length; j++){
+            var tmp = [xCoords[i] - zMultiply[j]*xMultiplySin[i], 0, zCoords[j] + zMultiply[j]*xMultiplyCos[i]];
+            if(j == 0) {
+              curveCoords.push(tmp);
+            }
+            newCoords.push([xCoords[i], 0, zCoords[j]]);
+            newCoords.push(tmp);
+          }
+        }
+        mathbox.set('#vec', { data: newCoords });
+        mathbox.set('#water-level', { data: curveCoords });
+      });
+
+    });
+  });
+  </script>
+
+  <link href="css/base.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+<body>
+  <div id="info"></div>
+</body>
+</html>
