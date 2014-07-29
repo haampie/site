@@ -21,29 +21,26 @@
    * Bootstrap
    */
 
-  // init points
+
+
+  staand = true;
   xCoords = [];
   zCoords = [];
   vectorCoords = [];
-  step = 8;
-  maxX = 512;
-  maxZ = 128;
+  maxX = 50;
+  maxZ = 25;
 
-  for(x0=0; x0<=maxX; x0+=step){
-    xCoords.push(x0);
-  }
+  function initGridPoint() {
+    for(x0=0; x0<=maxX; x0++){
+      xCoords.push(x0);
+    }
 
-  for(z0=0; z0<=maxZ; z0+=step){
-    zCoords.push(z0);
-  }
-
-  for(i=0; i < xCoords.length; i++){
-    for(j=0; j < zCoords.length; j++){
-      vectorCoords.push([xCoords[i], 0, zCoords[j]]);
-      vectorCoords.push([xCoords[i], 4, zCoords[j]]);
+    for(z0=0; z0<=maxZ; z0++){
+      zCoords.push(z0);
     }
   }
 
+  initGridPoint();
 
   DomReady.ready(function() {
     ThreeBox.preload([
@@ -66,21 +63,21 @@
       mathbox
         .viewport({
           type: 'cartesian',
-          range: [[0, maxX], [-5, 5], [0, maxZ]],
-          scale: [1, 1, maxZ/maxX],
-          rotation: [0,Math.PI/2,0],
+          range: [[0, maxX], [0, maxZ], [-5, 5]],
+          scale: [1, maxZ/maxX, 1],
+          rotation: [Math.PI,0,0],
           polar: 0,
         })
         .camera({
           orbit: 2,
-          phi: Math.PI/4,
-          theta: Math.PI/2,
+          phi: Math.PI/2,
+          theta: 0,
         })
         .transition(300)
         .vector({
           id: 'vec',
           n: xCoords.length*zCoords.length,
-          data: vectorCoords,
+          data: 0,
           expression: function(i, end) {
             return 0;
           },
@@ -102,19 +99,19 @@
         });
 
 
-      var k=Math.PI/179, A=14;
-      var omega = Math.sqrt(9.81*k);
-      var h=256;
+      var k=Math.PI/30, A=1;
+      var g = 9.81;
+      var omega = Math.sqrt(g*k);
+      var h=maxZ;
 
 
       mathbox.world().loop().hookPreRender(function () {
-        var t = +new Date()*0.002;
         var newCoords = [];
         var zMultiply = [];
         var xMultiplySin = [];
         var xMultiplyCos = [];
         var curveCoords = [];
-        var time = +new Date() * 0.002;
+        var time = +new Date() * 0.001;
 
         for(i=0; i < xCoords.length; i++){
           xMultiplySin.push(Math.sin(k*xCoords[i]-omega*time));
@@ -127,11 +124,11 @@
 
         for(i=0; i < xCoords.length; i++){
           for(j=0; j < zCoords.length; j++){
-            var tmp = [xCoords[i] - zMultiply[j]*xMultiplySin[i], 0, zCoords[j] + zMultiply[j]*xMultiplyCos[i]];
+            var tmp = [xCoords[i] - zMultiply[j]*xMultiplySin[i], zCoords[j] + zMultiply[j]*xMultiplyCos[i], 0];
             if(j == 0) {
               curveCoords.push(tmp);
             }
-            newCoords.push([xCoords[i], 0, zCoords[j]]);
+            newCoords.push([xCoords[i], zCoords[j], 0]);
             newCoords.push(tmp);
           }
         }
